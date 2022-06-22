@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
+import { PostsModule } from './posts/posts.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { reducers, metaReducers } from './reducers';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    PostsModule,
     StoreModule.forRoot(reducers, {
       metaReducers
     })
