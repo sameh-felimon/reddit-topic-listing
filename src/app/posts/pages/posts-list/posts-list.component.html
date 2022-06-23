@@ -3,4 +3,12 @@
         *ngFor="let post of posts?.data?.children" 
         [post]="post">
     </golf-post>
+
+    <golf-pagination 
+        [totalItems]="posts?.data?.dist"
+        [pageSize]="pageSize$ | ngrxPush"
+        [after]="posts?.data?.after"
+        [before]="posts?.data?.before"
+        (pageEvent)="changePageable($event)">
+    </golf-pagination>
 </ng-container>

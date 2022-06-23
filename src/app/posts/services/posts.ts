@@ -16,14 +16,16 @@ export interface RedditResponse {
 
 export interface RedditPostData {
     kind: RedditResponseTypes;
-    data: {
-        thumbnail: string;
-        created: Time;
-        num_comments: number;
-        author: string;
-        score: number;
-        title: string;
-    }
+    data: RedditPostDataProperties;
+}
+
+export interface RedditPostDataProperties {
+    thumbnail: string;
+    created: Time;
+    num_comments: number;
+    author: string;
+    score: number;
+    title: string;
 }
 
 export enum RedditResponseTypes {
@@ -36,7 +38,8 @@ export enum RedditResponseTypes {
 }
 
 export interface Pageable {
-    limit: number;
+    limit?: number;
     before?: string | null;
     after?: string | null;
-  }
+    isNext?: boolean | null;
+}

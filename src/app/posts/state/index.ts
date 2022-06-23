@@ -15,5 +15,6 @@ export const postsStateSelector = createSelector(featureSelector, (state) => sta
 
 export const postsListSelector = createSelector(postsStateSelector, (state) => state.postsList);
 export const pageableSelector = createSelector(postsStateSelector, (state) => state.pageable);
+export const pageableLimitSelector = createSelector(postsStateSelector, (state) => state.pageable.limit);
 export const loadingSelector = createSelector(postsStateSelector, (state) => state.loading);
 export const selectedPostSelector = createSelector(postsStateSelector, (state) => state.selectedPost);

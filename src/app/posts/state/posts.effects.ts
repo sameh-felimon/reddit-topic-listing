@@ -22,7 +22,7 @@ export class PostsEffects {
         this.actions$.pipe(ofType(PostsActions.getPostsList)),
     ])
         .pipe(
-            switchMap(([pageable]) => this.postsService.getPostsList(pageable as Pageable)
+            switchMap(([pageable]) => this.postsService.getPostsList(pageable)
                 .pipe(
                     map((posts) => PostsActions.getPostsListSuccess({ posts })),
                     catchError(({ message }) => of(PostsActions.failure({ message }))),

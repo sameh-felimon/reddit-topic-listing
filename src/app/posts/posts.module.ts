@@ -11,6 +11,8 @@ import { StoreModule } from '@ngrx/store';
 import { postsReducer } from './state/posts.reducers';
 import { PostsEffects } from './state/posts.effects';
 import { ReactiveComponentModule } from '@ngrx/component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ReactiveComponentModule } from '@ngrx/component';
     MatCardModule,
     MatIconModule,
     ReactiveComponentModule,
-
+    MatPaginatorModule,
+    SharedModule,
+    
     StoreModule.forFeature('posts-page', postsReducer),
     EffectsModule.forFeature([PostsEffects]),
   ]

@@ -17,7 +17,15 @@ export class PostsService {
     let url = this.redditUrl;
 
     if (pageable?.limit) {
-      url += `?limit=${pageable?.limit}`;
+      url += `?limit=${pageable?.limit}&&count=10`;
+    }
+
+    if ((pageable?.isNext === true) && pageable.after) {
+      url += `&after=${pageable?.after}`;
+    }
+
+    if ((pageable?.isNext === false) && pageable.before) {
+      url += `&before=${pageable?.before}`;
     }
 
     return this.httpClient.get<RedditDto>(url);
