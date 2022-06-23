@@ -1,3 +1,5 @@
+import { Time } from "@angular/common";
+
 export interface RedditDto {
     kind: string;
     data: RedditResponse;
@@ -16,7 +18,7 @@ export interface RedditPostData {
     kind: RedditResponseTypes;
     data: {
         thumbnail: string;
-        created: Date;
+        created: Time;
         num_comments: number;
         author: string;
         score: number;

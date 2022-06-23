@@ -14,4 +14,12 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public getPostedInHours(time: any): number {
+    return new Date(time).getHours();
+  }
+
+  public isValidImage(url: string | undefined) {
+    return url && url != 'self' && /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
+  }
+
 }

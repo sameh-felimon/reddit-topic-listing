@@ -1,21 +1,72 @@
 .post-card {
-    max-width: 700px;
+    width: 700px;
+    max-height: 300px;
     display: flex;
     padding: 0;
 }
 
 .mat-card-image {
     margin: 0;
+    max-width: 200px;
 }
 
 .mat-card-image:first-child {
     margin: 0;
 }
 
-.mat-card-content {
-    margin: 16px;
+.mat-card-header {
+    flex-shrink: 0;
 }
 
-.showMore {
-    font-weight: bold;
+div.mat-card-header-text {
+    margin: 0px 0px;
+}
+
+.mat-card-content {
+    margin: 16px;
+    width: 100%;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+
+    .showMore {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+    }
+}
+
+.reactions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+
+    .comment-icon {
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-image: url("../../../../assets/comment.png");
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        padding-right: 2px;
+    }
+
+    .comment-num {
+        padding-right: 10px;
+        color: #1c3043;
+    }
+
+    .score-icon {
+        display: block;
+        width: 14px;
+        height: 14px;
+        background-image: url("../../../../assets/updutt.png");
+        background-position: 0 0;
+        background-repeat: no-repeat;
+    }
 }

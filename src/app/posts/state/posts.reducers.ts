@@ -11,7 +11,7 @@ export interface PostsState {
 
 const initialState: PostsState = {
     postsList: undefined,
-    pageable: { limit: 25, before: null, after: null },
+    pageable: { limit: 10, before: null, after: null },
     loading: false,
     selectedPost: undefined,
 };
