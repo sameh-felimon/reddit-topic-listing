@@ -13,6 +13,7 @@ import { PostsEffects } from './state/posts.effects';
 import { ReactiveComponentModule } from '@ngrx/component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { SharedModule } from '../shared/shared.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { SharedModule } from '../shared/shared.module';
     ReactiveComponentModule,
     MatPaginatorModule,
     SharedModule,
-    
+    MatProgressSpinnerModule,
+
     StoreModule.forFeature('posts-page', postsReducer),
     EffectsModule.forFeature([PostsEffects]),
   ]

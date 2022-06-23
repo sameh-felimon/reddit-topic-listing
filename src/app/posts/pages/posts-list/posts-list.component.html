@@ -12,3 +12,10 @@
         (pageEvent)="changePageable($event)">
     </golf-pagination>
 </ng-container>
+
+<div
+  *ngIf="isLoading$ | ngrxPush"
+  class="table-loading-shade"
+>
+  <mat-spinner></mat-spinner>
+</div>

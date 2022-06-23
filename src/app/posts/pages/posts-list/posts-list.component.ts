@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Pageable } from '../../services/posts';
-import { pageableLimitSelector, pageableSelector, postsListSelector } from '../../state';
+import { loadingSelector, pageableLimitSelector, pageableSelector, postsListSelector } from '../../state';
 import { changePageable, getPostsList } from '../../state/posts.actions';
 
 @Component({
@@ -13,6 +13,7 @@ export class PostsListComponent implements OnInit {
   public posts$ = this.store.select(postsListSelector);
   public pageSize$ = this.store.select(pageableLimitSelector)
   public pageable$ = this.store.select(pageableSelector);
+  public isLoading$ = this.store.select(loadingSelector);
 
   constructor(private readonly store: Store) { }
 
