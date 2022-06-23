@@ -6,6 +6,12 @@ import { PostsRoutingModule } from './posts-routing.module';
 import { PostComponent } from './components/post/post.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { postsReducer } from './state/posts.reducers';
+import { PostsEffects } from './state/posts.effects';
+import { ReactiveComponentModule } from '@ngrx/component';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +24,10 @@ import { MatIconModule } from '@angular/material/icon';
     PostsRoutingModule,
     MatCardModule,
     MatIconModule,
+    ReactiveComponentModule,
+
+    StoreModule.forFeature('posts-page', postsReducer),
+    EffectsModule.forFeature([PostsEffects]),
   ]
 })
 export class PostsModule { }
