@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostDetailsComponent } from './pages/post-details/post-details.component';
+import { PostDetailsPageComponent } from './pages/post-details-page/post-details-page.component';
 import { PostsListComponent } from './pages/posts-list/posts-list.component';
 import { PostsRoutingModule } from './posts-routing.module';
 import { PostComponent } from './components/post/post.component';
@@ -14,17 +14,21 @@ import { ReactiveComponentModule } from '@ngrx/component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { SharedModule } from '../shared/shared.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
   declarations: [
     PostsListComponent,
+    PostDetailsPageComponent,
+    PostComponent,
     PostDetailsComponent,
-    PostComponent
   ],
   imports: [
     CommonModule,
     PostsRoutingModule,
+    MatButtonModule,
     MatCardModule,
     MatIconModule,
     ReactiveComponentModule,

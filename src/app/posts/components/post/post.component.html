@@ -1,5 +1,5 @@
 <mat-card class="post-card">
-    <div class="mat-card-header" *ngIf="isValidImage(post?.data?.thumbnail)" >
+    <div class="mat-card-header" *ngIf="utils.isValidImage(post?.data?.thumbnail)" >
         <img    
             mat-card-image 
             [src]="post?.data?.thumbnail" 
@@ -17,19 +17,21 @@
         </mat-card-actions>
 
         <mat-card-title>
-            {{post?.data?.title}}
+            <span class="showMore" (click)="getPostDetails(post?.data?.name)">
+                {{post?.data?.title}}
+            </span>
         </mat-card-title>
 
         
 
         <mat-card-actions class="footer">
                 <span>
-                    posted {{ getPostedInHours(post?.data?.created)}} hours ago
+                    posted {{ utils.getPostedInHours(post?.data?.created)}} hours ago
                     by user {{post?.data?.author}}
                 </span>
 
 
-            <span class="showMore">
+            <span class="showMore" (click)="getPostDetails(post?.data?.name)">
                 show more
                 <mat-icon>expand_more</mat-icon>
             </span>

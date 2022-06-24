@@ -1,7 +1,8 @@
 <ng-container *ngrxLet="posts$ as posts">
     <golf-post 
         *ngFor="let post of posts?.data?.children" 
-        [post]="post">
+        [post]="post"
+        (selectPostEvent)="selectPostClick($event)">
     </golf-post>
 
     <golf-pagination 

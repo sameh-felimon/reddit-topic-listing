@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { RedditPostData } from '../../services/posts';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { RedditPostData } from '../../models/posts';
+import * as Utils from 'src/app/shared/utils/utils';
 
 @Component({
   selector: 'golf-post',
@@ -7,19 +9,22 @@ import { RedditPostData } from '../../services/posts';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  @Input() post: RedditPostData | undefined;
+  @Input()
+  public post: RedditPostData | undefined;
 
-  constructor() { }
+  @Output()
+  public selectPostEvent = new EventEmitter<string>();
+
+  public utils = Utils;
+
+  constructor(private readonly router: Router) { }
 
   ngOnInit(): void {
   }
 
-  public getPostedInHours(time: any): number {
-    return new Date(time).getHours();
-  }
-
-  public isValidImage(url: string | undefined) {
-    return url && url != 'self' && /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
+  public getPostDetails(id: string | undefined): void {
+    this.selectPostEvent.emit(id);
+    this.router.navigate(['post', id,]);
   }
 
 }

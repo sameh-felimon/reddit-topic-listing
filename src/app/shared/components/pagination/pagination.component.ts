@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { map, Subject, takeUntil } from 'rxjs';
-import { Pageable } from 'src/app/posts/services/posts';
+import { Pageable } from 'src/app/posts/models/posts';
 
 @Component({
   selector: 'golf-pagination',

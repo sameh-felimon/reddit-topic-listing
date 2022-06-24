@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Pageable, RedditDto } from './posts';
+import { Pageable, RedditDto } from '../models/posts';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

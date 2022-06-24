@@ -5,7 +5,6 @@ import { Store } from '@ngrx/store';
 import { combineLatest, of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { pageableSelector } from '.';
-import { Pageable } from '../services/posts';
 import { PostsService } from '../services/posts.service';
 import * as PostsActions from './posts.actions';
 

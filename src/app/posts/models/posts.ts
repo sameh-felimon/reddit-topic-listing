@@ -26,6 +26,22 @@ export interface RedditPostDataProperties {
     author: string;
     score: number;
     title: string;
+    selftext: string;
+    name: string;
+    selftext_html: string;
+    subreddit_id: string;
+    url: string;
+    id: string;
+    preview: {
+        images: [{
+            source: {
+                url: string;
+                width: number;
+                height: number;
+            }
+
+        }]
+    }
 }
 
 export enum RedditResponseTypes {

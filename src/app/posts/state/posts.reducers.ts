@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { Pageable, RedditDto } from "../services/posts";
+import { Pageable, RedditDto } from "../models/posts";
 import * as PostsActions from './posts.actions';
 
 export interface PostsState {
@@ -36,6 +36,14 @@ export const postsReducer = createReducer(
                 ...pageable
             },
             loading: true,
+        }),
+    ),
+
+    on(
+        PostsActions.selectPost,
+        (state, { id }) => ({
+            ...state,
+            selectedPost: id,
         }),
     ),
 

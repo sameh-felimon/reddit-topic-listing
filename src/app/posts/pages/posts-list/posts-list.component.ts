@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Pageable } from '../../services/posts';
+import { Pageable } from '../../models/posts';
 import { loadingSelector, pageableLimitSelector, pageableSelector, postsListSelector } from '../../state';
-import { changePageable, getPostsList } from '../../state/posts.actions';
+import { changePageable, getPostsList, selectPost } from '../../state/posts.actions';
 
 @Component({
   selector: 'golf-posts-list',
@@ -23,5 +23,9 @@ export class PostsListComponent implements OnInit {
 
   public changePageable(pageable: Pageable): void {
     this.store.dispatch(changePageable({ pageable }));
+  }
+
+  public selectPostClick(id: string): void {
+    this.store.dispatch(selectPost({ id }));
   }
 }
