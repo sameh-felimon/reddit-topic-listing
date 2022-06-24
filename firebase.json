@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/top-golf",
     "ignore": [
       "firebase.json",
       "**/.*",
