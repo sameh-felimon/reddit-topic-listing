@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 import { PostDetailsComponent } from './post-details.component';
 
@@ -8,9 +10,13 @@ describe('PostDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostDetailsComponent ]
+      imports: [
+        MatIconModule,
+        MatCardModule,
+      ],
+      declarations: [PostDetailsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

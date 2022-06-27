@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PaginationComponent } from './pagination.component';
 
@@ -8,9 +10,14 @@ describe('PaginationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PaginationComponent ]
+      imports: [
+        MatPaginatorModule,
+        BrowserAnimationsModule,
+        NoopAnimationsModule,
+      ],
+      declarations: [PaginationComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

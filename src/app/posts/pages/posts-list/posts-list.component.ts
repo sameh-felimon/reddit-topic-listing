@@ -15,7 +15,7 @@ export class PostsListComponent implements OnInit {
   public pageable$ = this.store.select(pageableSelector);
   public isLoading$ = this.store.select(loadingSelector);
 
-  constructor(private readonly store: Store) { }
+  constructor(public readonly store: Store) { }
 
   ngOnInit(): void {
     this.store.dispatch(getPostsList());
