@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
+import { ReactiveComponentModule } from '@ngrx/component';
 
 import { PostDetailsPageComponent } from './post-details-page.component';
 
@@ -8,9 +10,13 @@ describe('PostDetailsPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostDetailsPageComponent ]
+      declarations: [PostDetailsPageComponent],
+      imports: [
+        ReactiveComponentModule,
+        StoreModule.forRoot({})
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
