@@ -2,12 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
+## Live preview
+https://reddit-topic-listing.web.app
+
+## UI/Library
+This project is using Angular Material component for UI
+
+## CI/CD
+This project is using Firbase CLI to create yaml to deploy on firbase hosting on Commit on master branch in GitHub.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Live preview
-https://reddit-topic-listing.web.app
+
 
 ## Code scaffolding
 
